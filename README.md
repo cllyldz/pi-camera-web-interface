@@ -2,9 +2,14 @@
 Web interface for Raspberry Pi camera
 
 ## Requirements
-* Raspberry Pi and camera module
-* Apache and PHP must be installed on the Raspberry Pi
-* ImageMagick - install with `sudo apt-get install imagemagick`
+* Raspberry Pi
+* Camera module
+
+## Installation
+1. Download pcwi-install.sh
+2. Make the script executable with `sudo chmod +x pcwi-install.sh` and run with `sudo ./pcwi-install.sh`
+3. Run the command `sudo visudo` to edit the sudoers file
+4. Add to the end of the file: `www-data ALL=(ALL) NOPASSWD: /var/www/html/camera/camera.py`
 
 ## Interface
 ![Screenshot](https://raw.githubusercontent.com/ben-woolnough/pi-camera-web-interface/master/images/interface.PNG)
