@@ -7,6 +7,9 @@ camera = picamera.PiCamera()
 # Set the filename
 filename = "/var/www/html/camera/pictures/new.jpg"
 
+# Set the image resolution
+camera.resolution = (720, 480)
+
 # Set the brightness to the value of the first command-line argument
 try:
     camera.brightness = int(sys.argv[1])
