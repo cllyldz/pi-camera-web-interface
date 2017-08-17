@@ -4,7 +4,7 @@
 $brightness = $_GET["br"];
 
 // Execute the Python script to take the picture
-$result = exec("sudo python3 camera.py " . escapeshellarg($brightness));
+$result = exec("sudo /var/www/html/camera/camera.py " . escapeshellarg($brightness));
 
 // Echo the output from Python
 echo $result;
