@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pi Camera</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1 class="heading">Raspberry Pi Camera</h1>
+
+  <div id="picture">
+    <img src="/camera/pictures/new.jpg" alt="picture">
+  </div>
+
+  <button id="take-picture" onclick="getScript()">Take picture</button>
+
+  <div id="options">
+    <label for="brightness">Brightness</label>
+    <input id="brightness" value="50">
+  </div>
+
+  <script>
+    var picture = document.getElementById("picture");
+
+    function getScript() {
+      picture.innerHTML = '<p>Loading...</p>';
+      xhr = new XMLHttpRequest();
+      // Wait for response with 200 status and update the picture
+      xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          // Log the output of the script
+          console.log(this.responseText);
+          picture.innerHTML = '<img src="/camera/pictures/new.jpg?' +
+          new Date().getTime() + '" alt="picture">';
+        }
+      }
+      // Send GET request to the PHP file
+      xhr.open("GET", "take-picture.php?br=" +
+        document.getElementById("brightness").value, true);
+      xhr.send();
+    }
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+.heading {
+  text-align: center;
+  font-family: Arial;
+  color: #ad2f08;
+}
+
+#picture {
+  text-align: center;
+  margin: 20px 10px;
+  height: 480px;
+}
+
+#picture img {
+  max-width: 100%;
+}
+
+#take-picture {
+  display: block;
+  margin: 0 auto 30px auto;
+  border: none;
+  background-color: #3cc10b;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#options {
+  width: 300px;
+  margin: auto;
+}
+
+#options label {
+  font-weight: bold;
+}
